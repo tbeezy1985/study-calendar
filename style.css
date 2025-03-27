@@ -12,7 +12,7 @@ h1 {
 .grid {
   display: grid;
   grid-template-columns: 150px 200px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
 }
 
 .slot,
@@ -57,9 +57,15 @@ h1 {
   font-size: 14px;
 }
 
-.custom-task button {
+.custom-task button,
+.save-clear {
   padding: 8px 12px;
   font-size: 14px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.save-clear-container {
+  text-align: center;
+  margin-top: 20px;
 }
