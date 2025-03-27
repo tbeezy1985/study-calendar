@@ -104,7 +104,7 @@ window.addEventListener("DOMContentLoaded", () => {
       saved[day] = [];
       const rows = table.querySelectorAll("tr");
       rows.forEach((row, i) => {
-        if (i === 0) return; // skip header
+        if (i === 0) return;
         const cell = row.children[1];
         saved[day].push(cell.innerHTML);
       });
@@ -120,7 +120,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Restore saved schedule
   const saved = JSON.parse(localStorage.getItem("studySchedule"));
   if (saved) {
     document.querySelectorAll("table.grid").forEach((table) => {
