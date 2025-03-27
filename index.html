@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Study Planner</title>
+  <title>Evening Study Planner</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Drag and Drop Study Planner</h1>
-  <div class="schedule">
-    <div class="days">
-      <div class="day-label">Time</div>
-      <div class="day-label">Monday</div>
-      <div class="day-label">Tuesday</div>
-      <div class="day-label">Wednesday</div>
-      <div class="day-label">Thursday</div>
-      <div class="day-label">Friday</div>
-    </div>
-    <div id="grid" class="grid"></div>
+  <h1>Evening Study Planner</h1>
+
+  <div class="grid" id="schedule">
+    <div class="label">Time</div>
+    <div class="label">My Evening</div>
   </div>
 
   <div class="blocks">
-    <h3>Study Blocks</h3>
+    <h3>Drag to Study Hall</h3>
     <div class="block" draggable="true">Math</div>
-    <div class="block" draggable="true">Reading</div>
     <div class="block" draggable="true">Science</div>
+    <div class="block" draggable="true">Reading</div>
     <div class="block" draggable="true">Break</div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
