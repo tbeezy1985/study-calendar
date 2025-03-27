@@ -20,12 +20,12 @@ window.addEventListener("DOMContentLoaded", () => {
   timeBlocks.forEach((time, rowIndex) => {
     const row = document.createElement("tr");
 
-    // Create time label
+    // Create time label with color block
     const timeCell = document.createElement("td");
     timeCell.className = "slot";
     timeCell.textContent = time;
 
-    // Set background color and section labels
+    // Set background color and label once in time column
     if (rowIndex <= 5) {
       timeCell.style.backgroundColor = blockColor["Athletics"];
       if (rowIndex === 0) timeCell.textContent += " (Athletics)";
@@ -40,12 +40,11 @@ window.addEventListener("DOMContentLoaded", () => {
     row.appendChild(timeCell);
 
     // Create drop zones for each day
-    days.forEach((day) => {
+    days.forEach(() => {
       const cell = document.createElement("td");
       cell.className = "slot";
 
       if (rowIndex >= 9 && rowIndex <= 12) {
-        // Enable drop only during Study Hall blocks
         cell.addEventListener("dragover", (e) => e.preventDefault());
         cell.addEventListener("drop", (e) => {
           const id = e.dataTransfer.getData("text");
@@ -97,9 +96,9 @@ window.addEventListener("DOMContentLoaded", () => {
   window.saveSchedule = function () {
     const saved = [];
     document.querySelectorAll("#schedule tr").forEach((row, rowIndex) => {
-      if (rowIndex === 0) return; // skip header
-      const cells = Array.from(row.querySelectorAll("td")).slice(1); // skip time cell
-      saved[rowIndex - 1] = cells.map(cell => cell.innerHTML);
+      if (rowIndex === 0) return;
+      const cells = Array.from(row.querySelectorAll("td")).slice(1);
+      saved[rowIndex - 1] = cells.map((cell) => cell.innerHTML);
     });
     localStorage.setItem("studySchedule", JSON.stringify(saved));
     alert("Schedule saved!");
@@ -120,7 +119,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Clear
   window.clearSchedule = function () {
     if (confirm("Clear all study blocks?")) {
       localStorage.removeItem("studySchedule");
