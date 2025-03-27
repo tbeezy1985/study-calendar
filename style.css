@@ -45,3 +45,21 @@ h1 {
   color: black;
   cursor: grab;
 }
+
+.custom-task {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.custom-task input {
+  padding: 8px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.custom-task button {
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
