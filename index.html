@@ -9,10 +9,7 @@
 <body>
   <h1>Evening Study Planner</h1>
 
-  <div class="grid" id="schedule">
-    <div class="label">Time</div>
-    <div class="label">My Evening</div>
-  </div>
+  <div id="planner"></div>
 
   <div class="blocks">
     <h3>Drag to Study Hall</h3>
@@ -26,6 +23,11 @@
     <h3>Create Your Own Study Block</h3>
     <input type="text" id="customTaskInput" placeholder="e.g. History project" />
     <button onclick="addCustomBlock()">Add</button>
+  </div>
+
+  <div class="save-clear-container">
+    <button class="save-clear" onclick="saveSchedule()">Save</button>
+    <button class="save-clear" onclick="clearSchedule()">Clear</button>
   </div>
 
   <script src="script.js"></script>
